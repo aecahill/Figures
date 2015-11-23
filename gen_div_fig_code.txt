@@ -10,3 +10,9 @@
 #contrib figure
 
 ggplot(data=contrib,aes(x=zone_num,y=Cs))+geom_bar(stat="identity", fill="#999999",colour="black")+ geom_errorbar(aes(ymin=Cs-se, ymax=Cs+se), width=.1, position=pd)+theme_bw()+theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank())+xlab("\nZone")+ylab("Mean Cs\n")+scale_x_discrete(labels=c("CAT","BLU","MAR","CAL","CAS","POR","SRA","CAZ","COR"))
+
+#proportion of significant distances figure, both corrected and not corrected for distance.
+
+> prop<-ggplot(data=zoneprop,aes(x=zonelett,y=prop_sig))+geom_bar(stat="identity", fill="#999999",colour="black")+ theme_bw()+theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank())+xlab("\nZone")+ylab("Proportion of differences\n")+scale_x_discrete(labels=c("CAT-BLU","BLU-MAR","MAR-CAL","CAL-CAS","CAS-POR","POR-SRA","SRA-CAZ","CAZ-COR"))+scale_y_continuous(limits=c(0,0.75))
+> dist<-ggplot(data=zoneprop,aes(x=zonelett,y=dist_corr))+geom_bar(stat="identity", fill="#999999",colour="black")+ theme_bw()+theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank())+xlab("\nZone")+ylab("Distance-corrected differences\n")+scale_x_discrete(labels=c("CAT-BLU","BLU-MAR","MAR-CAL","CAL-CAS","CAS-POR","POR-SRA","SRA-CAZ","CAZ-COR"))+scale_y_continuous(limits=c(0,0.075))
+> multiplot(prop,dist)

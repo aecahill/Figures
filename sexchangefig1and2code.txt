@@ -1,0 +1,26 @@
+#For color
+
+> cbPalette2<-c("#000000","#999999","#0000CC","#CCCCCC","#FF0000")
+> ggplot(data=sexprop3, aes(x=Week, y=female, colour=Treatment, shape=Treatment)) + geom_line(size=1)+geom_point(size=4)+ylab("Proportion female\n")+xlab("\nWeek")+theme_bw()+ylim(0,1)+theme(legend.position=c(.1,.8)) + theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank())+theme(axis.title.x = element_text(size=14))+theme(axis.title.y=element_text(size=14))+theme(legend.title=element_text(size=14,face="plain"))+scale_colour_manual(values=cbPalette2)
+> ggsave(filename="Fig1sexchange.tiff",width=6.7,height=4.77,units="in",dpi=300)
+
+#For grayscale
+
+> graycolors<-c("#000000","#696969","#3f3f3f","#939393","#151515")
+> ggplot(data=sexprop3, aes(x=Week, y=female, colour=Treatment, shape=Treatment)) + geom_line(aes(linetype=Treatment),size=1)+geom_point(size=3)+ylab("Proportion female\n")+xlab("\nWeek")+theme_bw()+ylim(0,1)+theme(legend.position=c(.1,.75)) + theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank())+theme(axis.title.x = element_text(size=10))+theme(axis.title.y=element_text(size=10))+theme(legend.title=element_text(size=10,face="plain"))+scale_colour_manual(values=graycolors)
+> ggsave(filename="Fig1sexchangegrayscale.tiff",width=6.7,height=4.77,units="in",dpi=300)
+
+
+#For grayscale, prop_male (survival analysis)
+
+> ggplot(data=sexchangemale, aes(x=Week, y=prop_male, colour=Treatment, shape=Treatment)) + geom_line(aes(linetype=Treatment),size=1)+geom_point(size=3)+ylab("Proportion male\n")+xlab("\nWeek")+theme_bw()+ylim(0,1)+theme(legend.position=c(.1,.75)) + theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank())+theme(axis.title.x = element_text(size=10))+theme(axis.title.y=element_text(size=10))+theme(legend.title=element_text(size=10,face="plain"))+scale_colour_manual(values=graycolors)
+
+#For mortality figure
+
+> ggplot(data=mortality,aes(x=treatment,y=proportion))+geom_bar(stat="identity")+geom_errorbar(aes(ymin=proportion-CI, ymax=proportion+CI), width=.1, position=pd) +theme_bw()+theme(panel.grid.major=element_blank())+scale_y_continuous(limits=c(0,1.0))+xlab("\nTreatment")+ylab("Proportion\n")
+> ggsave(filename="mortality.tiff",width=6.7,height=4.77,units="in",dpi=300)
+
+#For sex change at week 10 figure
+
+> ggplot(data=scsexchange,aes(x=treatment,y=prop))+geom_bar(stat="identity")+geom_errorbar(aes(ymin=prop-CI, ymax=prop+CI), width=.1, position=pd) +theme_bw()+theme(panel.grid.major=element_blank())+scale_y_continuous(limits=c(0,1.05))+xlab("\nTreatment")+ylab("Proportion\n")
+> ggsave(filename="sexchangeweek10.tiff",width=6.7,height=4.77,units="in",dpi=300)

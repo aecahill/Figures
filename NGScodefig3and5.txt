@@ -1,0 +1,11 @@
+ggplot(data = convclust, aes(x = Pop, y = Prop, fill = Clust)) + geom_bar(stat="identity")+theme_bw()+theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank())+ylab("Proportion\n")+xlab("Population")+ theme(axis.title.x = element_text(size=12))+theme(axis.title.y=element_text(size=12))+guides(fill=FALSE)+scale_fill_manual(values=greyscale)
+
+greyscale<-c("#000000","#333333","#666666","#999999","#CCCCCC")
+
+ggplot(data=convar,aes(x=Pop,y=Ar))+geom_bar(stat="identity")+geom_errorbar(aes(ymin=Ar-CI, ymax=Ar+CI), width=.1, position=pd) +theme_bw()+theme(panel.grid.major=element_blank())+scale_y_continuous(limits=c(0,3.0))+xlab("\nPopulation")+ylab("Allelic richness\n")
+
+#Allelic richness graph for Fig 2 with grey bars.
+ggplot(data=convarnoout,aes(x=Pop,y=Ar))+geom_bar(stat="identity", fill="#999999",colour="black")+ geom_errorbar(aes(ymin=Ar-CI, ymax=Ar+CI), width=.1, position=pd) +theme_bw()+theme(panel.grid.major=element_blank())+coord_cartesian(ylim=c(1, 2))+ element_text(size=14)+xlab("\nPopulation")+ylab("Allelic richness\n")
+
+#private alleles graph
+ggplot(data=fornprival,aes(x=Pop,y=Proportion))+geom_bar(stat="identity", fill="#999999",colour="black")+ geom_errorbar(aes(ymin=Proportion-CI, ymax=Proportion+CI), width=.1, position=pd) +theme_bw()+theme(panel.grid.major=element_blank())+ xlab("\nPopulation")+ylab("Number of private alleles\n")+scale_y_continuous(limits=c(0,0.2))

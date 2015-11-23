@@ -1,6 +1,12 @@
+#gen diversity figure, 4-panel
+
 > Dglob<-ggplot(data = datakey, aes(x = Dev_type, y = D)) + geom_boxplot()+theme_bw()+theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank())+ylab("D\n")+xlab("Larval type")+ theme(axis.title.x = element_text(size=12))+theme(axis.title.y=element_text(size=12))+guides(fill=FALSE)+scale_fill_manual(values=greyscale)+scale_y_continuous(limits=c(-0.1,1))
 > ppglob<-ggplot(data = datakey, aes(x = Dev_type, y = ppfst)) + geom_boxplot()+theme_bw()+theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank())+ylab("Pairwise Fst\n")+xlab("Larval type")+ theme(axis.title.x = element_text(size=12))+theme(axis.title.y=element_text(size=12))+guides(fill=FALSE)+scale_fill_manual(values=greyscale)+scale_y_continuous(limits=c(-0.1,1))
 > Dmar<-ggplot(data = datakeymar, aes(x = Dev_type, y = D)) + geom_boxplot()+theme_bw()+theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank())+ylab("D\n")+xlab("Larval type")+ theme(axis.title.x = element_text(size=12))+theme(axis.title.y=element_text(size=12))+guides(fill=FALSE)+scale_fill_manual(values=greyscale)+scale_y_continuous(limits=c(-0.1,1))
 > ppmar<-ggplot(data = datakeymar, aes(x = Dev_type, y = ppfst)) + geom_boxplot()+theme_bw()+theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank())+ylab("Pairwise Fst\n")+xlab("Larval type")+ theme(axis.title.x = element_text(size=12))+theme(axis.title.y=element_text(size=12))+guides(fill=FALSE)+scale_fill_manual(values=greyscale)+scale_y_continuous(limits=c(-0.1,1))
 > multiplot(Dglob,ppglob,Dmar,ppmar, cols=2)
 > 
+
+#contrib figure
+
+ggplot(data=contrib,aes(x=zone_num,y=Cs))+geom_bar(stat="identity", fill="#999999",colour="black")+ geom_errorbar(aes(ymin=Cs-se, ymax=Cs+se), width=.1, position=pd)+theme_bw()+theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank())+xlab("\nZone")+ylab("Mean Cs\n")+scale_x_discrete(labels=c("CAT","BLU","MAR","CAL","CAS","POR","SRA","CAZ","COR"))

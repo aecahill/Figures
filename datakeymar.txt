@@ -1,0 +1,10 @@
+Sp_ID	Dev_type	D	ppfst	PLD
+Pcla	lt	0.185	0.032	6
+Crub	lt	0.26	0.057	4
+Olon	lt	0.002	-0.006376667	10
+Asqu	dd	0.969	0.705	0
+Pliv	pt	-0.025	-0.019581333	28
+Ecor	pt	-0.09	0.02097	28
+Hmar	dd	0.565	0.419207857	0
+Mtru	lt	0.009	0.039	1
+Pcae	lt	0.021	0.120714	7

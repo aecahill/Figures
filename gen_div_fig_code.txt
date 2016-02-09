@@ -40,3 +40,10 @@ ggplot(data=contrib,aes(x=zone_num,y=Cs))+geom_bar(stat="identity", fill="#99999
 #IBD figure all species one panel  (this cuts off lots and lots of points for some species because limits are set from 0 to 1 but I don't know what to do about it.
 
 ggplot(ibd, aes(x=distance, y=fst, colour=species)) +geom_point(size=3.5)+geom_smooth(method=lm,size=1,se=FALSE)+theme_bw()+theme(panel.grid.major=element_blank())+scale_y_continuous(limits=c(0,1.05))+xlab("\nDistance")+ylab("Fst\n")+scale_color_manual(values=colors)
+
+
+#Map of the study zone in France
+library(maps)
+data("franceMapEnv")
+map(worldMapEnv)
+map('france',xlim=c(4.5,8),ylim=c(43,44.15),fill=TRUE,col="grey70")

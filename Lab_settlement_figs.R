@@ -9,7 +9,7 @@ colfig2a<-c("red","purple","cyan","grey")
 #predictions<-ggplot(data=predobs, aes(x=Time, y=Predict)) + geom_line(aes(linetype=Treatment,color=Treatment),size=1)+ylab("Proportion of larvae settled\n")+xlab("\nTime Course (hours)")+theme_bw()+ylim(0,1)+theme(legend.position=c(.1,.75)) + theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank())+theme(axis.title.x = element_text(size=10))+theme(axis.title.y=element_text(size=10))+theme(legend.title=element_text(size=10,face="plain"))+scale_colour_manual(values=graycolors)
 
 #color
-predictions<-ggplot(data=predobs, aes(x=Time, y=Predict)) + geom_line(aes(linetype=Treatment,color=Treatment),size=1)+ylab("Proportion of larvae settled")+xlab("\nTime Course (hours)")+theme_bw()+ylim(0,1)+theme(legend.position=c(.1,.75)) + theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank())+theme(axis.title.x = element_text(size=10))+theme(axis.title.y=element_text(size=10))+theme(legend.title=element_text(size=10,face="plain"))+scale_colour_manual(values=colfig2a)
+predictions<-ggplot(data=predobs, aes(x=Time, y=Predict)) + geom_line(aes(linetype=Treatment,color=Treatment),size=1)+ylab("Proportion of larvae settled\n")+xlab("\nTime Course (hours)")+theme_bw()+ylim(0,1)+theme(legend.position=c(.1,.75)) + theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank())+theme(axis.title.x = element_text(size=10))+theme(axis.title.y=element_text(size=10))+theme(legend.title=element_text(size=10,face="plain"))+scale_colour_manual(values=colfig2a)
 
 #add observations
 

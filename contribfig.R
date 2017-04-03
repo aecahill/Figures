@@ -1,4 +1,6 @@
-contrib3<-read.table("C:/Users/acahill/Desktop/contrib3.txt",header=TRUE)
+library(ggplot2)
+
+contrib3<-read.table("C:/Users/Abigail/Desktop/contrib3.txt",header=TRUE)
 
 sppcol<-c("gold","red","cyan","green","orange","brown","darkgrey","magenta","purple")
 
@@ -24,4 +26,7 @@ panel.grid.major = element_blank(),
   xlab("\nZone")+ylab("Cs\n")+
   scale_x_discrete(labels=c("1","2","3","4","5","6","7","8","9"))+
   stat_summary(fun.data=data_summary, geom="pointrange", color="black",cex=1)+
-  geom_hline(yintercept=0)
+  geom_hline(yintercept=0)+
+  annotate("text",x=2,y=-0.09,label="*",size=10)+
+  annotate("text",x=6,y=0.06,label="*",size=10)+
+  annotate("text",x=9,y=0.09,label="*",size=10)

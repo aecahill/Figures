@@ -1,9 +1,9 @@
 #gen diversity figure, 4-panel, now as stripchart and not bars.
 
-> Dglob<-ggplot(data = datakey2, aes(x = Dev_type, y = Dest)) + geom_jitter(position=position_jitter(0.2))+theme_bw()+theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank())+ylab("D\n")+xlab("Larval type")+ theme(axis.title.x = element_text(size=12))+theme(axis.title.y=element_text(size=12))+guides(fill=FALSE)+scale_fill_manual(values=greyscale)+scale_y_continuous(limits=c(-0.1,1))
-> ppglob<-ggplot(data = datakey2, aes(x = Dev_type, y = Mean_Fst_pairwise)) + geom_jitter(position=position_jitter(0.2))+theme_bw()+theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank())+ylab("Pairwise Fst\n")+xlab("Larval type")+ theme(axis.title.x = element_text(size=12))+theme(axis.title.y=element_text(size=12))+guides(fill=FALSE)+scale_fill_manual(values=greyscale)+scale_y_continuous(limits=c(-0.1,1))
-> Dmar<-ggplot(data = datakeymar, aes(x = Dev_type, y = D)) + geom_jitter(position=position_jitter(0.2))+theme_bw()+theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank())+ylab("D\n")+xlab("Larval type")+ theme(axis.title.x = element_text(size=12))+theme(axis.title.y=element_text(size=12))+guides(fill=FALSE)+scale_fill_manual(values=greyscale)+scale_y_continuous(limits=c(-0.1,1))
-> ppmar<-ggplot(data = datakeymar, aes(x = Dev_type, y = ppfst)) + geom_jitter(position=position_jitter(0.2))+theme_bw()+theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank())+ylab("Pairwise Fst\n")+xlab("Larval type")+ theme(axis.title.x = element_text(size=12))+theme(axis.title.y=element_text(size=12))+guides(fill=FALSE)+scale_fill_manual(values=greyscale)+scale_y_continuous(limits=c(-0.1,1))
+> Dglob<-ggplot(data = datakey2, aes(x = Dev_type, y = Dest)) + geom_jitter(position=position_jitter(0.2))+theme_bw()+theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank())+ylab("D\n")+xlab("Larval type")+ theme(axis.title.x = element_text(size=16))+theme(axis.title.y=element_text(size=16))+guides(fill=FALSE)+scale_fill_manual(values=greyscale)+scale_y_continuous(limits=c(-0.1,1))
+> ppglob<-ggplot(data = datakey2, aes(x = Dev_type, y = Mean_Fst_pairwise)) + geom_jitter(position=position_jitter(0.2))+theme_bw()+theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank())+ylab("Pairwise Fst\n")+xlab("Larval type")+ theme(axis.title.x = element_text(size=16))+theme(axis.title.y=element_text(size=16))+guides(fill=FALSE)+scale_fill_manual(values=greyscale)+scale_y_continuous(limits=c(-0.1,1))
+> Dmar<-ggplot(data = datakeymar, aes(x = Dev_type, y = D)) + geom_jitter(position=position_jitter(0.2))+theme_bw()+theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank())+ylab("D\n")+xlab("Larval type")+ theme(axis.title.x = element_text(size=16))+theme(axis.title.y=element_text(size=16))+guides(fill=FALSE)+scale_fill_manual(values=greyscale)+scale_y_continuous(limits=c(-0.1,1))
+> ppmar<-ggplot(data = datakeymar, aes(x = Dev_type, y = ppfst)) + geom_jitter(position=position_jitter(0.2))+theme_bw()+theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank())+ylab("Pairwise Fst\n")+xlab("Larval type")+ theme(axis.title.x = element_text(size=16))+theme(axis.title.y=element_text(size=16))+guides(fill=FALSE)+scale_fill_manual(values=greyscale)+scale_y_continuous(limits=c(-0.1,1))
 > multiplot(Dglob,ppglob,Dmar,ppmar, cols=2)
 > 
 
@@ -52,7 +52,7 @@ map('france',xlim=c(4.5,8),ylim=c(43,44.15),fill=TRUE,col="grey70")
 #Figure of the proportion of species with barriers in particular zones
 
 greyscale<-c("grey25","grey75")
-ggplot(data=barriers, aes(x=zones, y=proportion, fill=threshold)) + geom_bar(stat="identity", position=position_dodge())+theme_bw()+theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank())+ylab("Proportion of species\n")+xlab("Zones")+ theme(axis.title.x = element_text(size=12))+theme(axis.title.y=element_text(size=12))+scale_fill_manual(values=greyscale)+scale_y_continuous(limits=c(0,0.8))
+ggplot(data=barriers, aes(x=zones, y=proportion, fill=threshold)) + geom_bar(stat="identity", position=position_dodge())+theme_bw()+theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank())+ylab("Proportion of species\n")+xlab("Zones")+ theme(axis.title.x = element_text(size=16))+theme(axis.title.y=element_text(size=16))+scale_fill_manual(values=greyscale)+scale_y_continuous(limits=c(0,0.8))
 
 #Contrib figure with stripchart instead of boxes
 

@@ -1,6 +1,6 @@
 library(ggplot2)
 
-sgdctest<-read.table("C:/Users/acahill/Desktop/sgdctest.txt",header=TRUE)
+sgdctest<-read.table("C:/Users/Abigail/Desktop/sgdctest.txt",header=TRUE)
 
 ggplot(sgdctest, aes(x=Simpson, y=Avg_gen)) + 
   geom_point(size=5)+
@@ -8,7 +8,7 @@ ggplot(sgdctest, aes(x=Simpson, y=Avg_gen)) +
   theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank())+
   xlab("\nSimpson's Index")+
   ylab("Average Genetic Diversity\n")+ 
-  #geom_smooth(method = "lm", se = FALSE,col="black")+
+  geom_smooth(method = "lm", se = FALSE,col="black")+
   annotate("text", x = 0.87, y = 0.198, label = "1", size = 6)+
   annotate("text", x = 0.827, y = 0.16, label = "2", size = 6)+
   annotate("text", x = 0.9, y = 0.195, label = "3", size = 6)+

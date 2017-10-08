@@ -2,7 +2,7 @@ library(ggplot2)
 
 sgdctest<-read.table("C:/Users/Abigail/Desktop/sgdctest.txt",header=TRUE)
 
-ggplot(sgdctest, aes(x=Simpson, y=Avg_gen)) + 
+Fig5<-ggplot(sgdctest, aes(x=Simpson, y=Avg_gen)) + 
   geom_point(size=5)+
   theme_bw()+
   theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank())+

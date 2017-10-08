@@ -15,7 +15,7 @@ data_summary <- function(x) {
   return(c(y=m,ymin=ymin,ymax=ymax))
 }
 
-ggplot(contrib3, aes(x=Zone, y=Cs))+ 
+Fig3<-ggplot(contrib3, aes(x=Zone, y=Cs))+ 
  geom_jitter(aes(color =Species),position=position_jitter(0.2),cex=3)+
   scale_colour_manual(values=sppcol)+
  theme_bw()+
